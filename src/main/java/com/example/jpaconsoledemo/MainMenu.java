@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MainMenu {
-    final CoffeeRepository coffeeRepository;
 
-    public MainMenu(CoffeeRepository coffeeRepository) {
-        this.coffeeRepository = coffeeRepository;
-    }
+    @Autowired
+    CoffeeRepository coffeeRepository;
+
+
 
     public void printAllCoffees() {
         var coffee = new Coffee(1L, "Black Coffee");
