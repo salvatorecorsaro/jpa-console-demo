@@ -22,10 +22,8 @@ public class JpaConsoleDemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        var coffee = new Coffee(1L, "Black Coffee");
-        coffeeRepository.save(coffee);
-        var allCoffees = coffeeRepository.findAll();
-        for (var c : allCoffees) System.out.println("Our menu includes: " + c.getName());
+        var mainMenu = new MainMenu(coffeeRepository);
+        mainMenu.printAllCoffees();
     }
 }
 
