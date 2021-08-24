@@ -10,15 +10,19 @@ public class MainMenuAutowired {
     CoffeeRepository coffeeRepository;
 
     @Autowired
+    NewMenu newMenu;
+
+    @Autowired
     public MainMenuAutowired(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
     }
 
 
     public void printAllCoffees() {
-        var coffee = new Coffee(1L, "Black Coffee");
-        coffeeRepository.save(coffee);
-        var allCoffees = coffeeRepository.findAll();
-        for (var c : allCoffees) System.out.println("Our menu includes: " + c.getName());
+      //  var coffee = new Coffee(1L, "Black Coffee");
+       // coffeeRepository.save(coffee);
+        //var allCoffees = coffeeRepository.findAll();
+        //for (var c : allCoffees) System.out.println("Our menu includes: " + c.getName());
+       newMenu.printAllCoffees();
     }
 }
